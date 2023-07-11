@@ -476,5 +476,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-appsettings.json
 /WebWallet/appsettings.json
+/WebWallet/appsettings.Development.json
