@@ -9,10 +9,13 @@
 
 @if (Model.banks.Count() > 0)
 {
-    @foreach (ReadBankDTO bank in Model.banks)
-    {
-        <partial name="\Partial\_CardInstituicao" model="bank" />
-    }
+    <div class="d-lg-flex flex-wrap">
+        @foreach (ReadBankDTO bank in Model.banks)
+        {
+            <partial name="\Partial\_CardInstituicao" model="bank" />
+        }
+    </div>
+    
     <partial name="\Partial\_BtnCadastrarInstituicao" />
 }
 else
