@@ -25,7 +25,7 @@ namespace WebWallet.Controllers
 
         public async Task<IActionResult> CreateBank(CreateBankDTO bank)
         {
-            var result = await bankService.CreateAsyncWithUser(bank, User);
+            var result = await bankService.CreateWithUserAsync(bank, User);
 
             return Redirect("/Account");
         }

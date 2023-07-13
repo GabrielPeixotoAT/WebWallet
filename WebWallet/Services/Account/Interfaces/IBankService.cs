@@ -5,7 +5,7 @@ namespace WebWallet.Services.Account.Interfaces
 {
     public interface IBankService
     {
-        Task<CreateBankDTO> CreateAsyncWithUser(CreateBankDTO bank, ClaimsPrincipal user);
+        Task<CreateBankDTO> CreateWithUserAsync(CreateBankDTO bank, ClaimsPrincipal user);
         Task<ReadBankDTO> ReadByIdAsync(int id);
         Task<IEnumerable<ReadBankDTO>> ReadAllByUserAsync(ClaimsPrincipal principal);
         Task<UpdateBankDTO> Update(UpdateBankDTO updateBank);

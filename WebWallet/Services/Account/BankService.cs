@@ -23,7 +23,7 @@ namespace WebWallet.Services.Account
             this.identityService = identityService;
         }
 
-        public async Task<CreateBankDTO> CreateAsyncWithUser(CreateBankDTO createBank, ClaimsPrincipal user)
+        public async Task<CreateBankDTO> CreateWithUserAsync(CreateBankDTO createBank, ClaimsPrincipal user)
         {
             createBank.User = await identityService.GetCurrentUserAsync(user);
 
@@ -32,7 +32,7 @@ namespace WebWallet.Services.Account
             return createBank;
         }
 
-        public async Task<CreateBankDTO> CreateAsync(CreateBankDTO createBank)
+        private async Task<CreateBankDTO> CreateAsync(CreateBankDTO createBank)
         {
             Bank bank = mapper.Map<Bank>(createBank);
 
