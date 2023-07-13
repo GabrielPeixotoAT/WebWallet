@@ -1,4 +1,4 @@
-﻿using WebWallet.Data.DTO.Institutions.Bank;
+﻿using WebWallet.Data.DTO.Account.Bank;
 
 namespace WebWallet.Data.ViewModel.Accounts
 {

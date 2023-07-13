@@ -1,7 +1,7 @@
 ﻿using WebWallet.Services.Identity;
 using WebWallet.Services.Identity.Interfaces;
-using WebWallet.Services.Institutions;
-using WebWallet.Services.Institutions.Interfaces;
+using WebWallet.Services.Account;
+using WebWallet.Services.Account.Interfaces;
 
 namespace WebWallet.DIP
 {

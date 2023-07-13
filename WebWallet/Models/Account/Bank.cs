@@ -1,10 +1,11 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebWallet.Data.DTO.Institutions.Bank
+namespace WebWallet.Models.Account
 {
-    public class ReadBankDTO
+    public class Bank
     {
+        [Key]
         [Required]
         public int BankId { get; set; }
         [Required]

@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
-using WebWallet.Data.DTO.Institutions.Bank;
+using WebWallet.Data.DTO.Account.Bank;
 
-namespace WebWallet.Services.Institutions.Interfaces
+namespace WebWallet.Services.Account.Interfaces
 {
     public interface IBankService
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace WebWallet.Data.DTO.Institutions.Bank
+namespace WebWallet.Data.DTO.Account.Bank
 {
     public class CreateBankDTO
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebWallet.Models.Institutions;
+using WebWallet.Models.Account;
 
 namespace WebWallet.Data
 {

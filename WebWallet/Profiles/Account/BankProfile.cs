@@ -1,8 +1,8 @@
 ﻿using AutoMapper;
-using WebWallet.Data.DTO.Institutions.Bank;
-using WebWallet.Models.Institutions;
+using WebWallet.Data.DTO.Account.Bank;
+using WebWallet.Models.Account;
 
-namespace WebWallet.Profiles.Institutions
+namespace WebWallet.Profiles.Account
 {
     public class BankProfile : Profile
     {

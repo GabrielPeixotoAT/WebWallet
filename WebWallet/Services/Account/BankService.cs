@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Identity;
 using System.Security.Claims;
-using WebWallet.Data.DTO.Institutions.Bank;
+using WebWallet.Data.DTO.Account.Bank;
 using WebWallet.Data;
-using WebWallet.Models.Institutions;
+using WebWallet.Models.Account;
 using WebWallet.Services.Identity.Interfaces;
-using WebWallet.Services.Institutions.Interfaces;
+using WebWallet.Services.Account.Interfaces;
 
-namespace WebWallet.Services.Institutions
+namespace WebWallet.Services.Account
 {
     public class BankService : IBankService
     {

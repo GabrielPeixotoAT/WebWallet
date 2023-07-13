@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WebWallet.Data.DTO.Institutions.Bank;
+using WebWallet.Data.DTO.Account.Bank;
 using WebWallet.Data.ViewModel.Accounts;
-using WebWallet.Services.Institutions.Interfaces;
+using WebWallet.Services.Account.Interfaces;
 
 namespace WebWallet.Controllers
 {
