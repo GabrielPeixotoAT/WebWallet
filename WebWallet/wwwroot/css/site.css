@@ -16,3 +16,30 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.clear-input-class {
+    background-color: transparent;
+    border: 0px solid;
+}
+
+.clear-input-class:focus {
+    outline: none;
+}
+
+.clear-input-class:-webkit-autofill,
+.clear-input-class:-webkit-autofill:hover,
+.clear-input-class:-webkit-autofill:focus,
+.clear-input-class:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0) inset !important;
+}
+
+.my-card {
+    border-radius: 30px;
+    padding: 20px
+}
+
+.my-card-close-btn {
+    float: right;
+    margin-top: -25px;
+    margin-right: -25px;
+}

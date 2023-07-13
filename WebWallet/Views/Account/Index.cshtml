@@ -1,0 +1,26 @@
+﻿@using WebWallet.Data.ViewModel.Accounts;
+@using WebWallet.Data.DTO.Institutions.Bank;
+
+@{
+    ViewData["Title"] = "Contas";
+}
+
+@model AccountViewModel
+
+@if (Model.banks.Count() > 0)
+{
+    @foreach (ReadBankDTO bank in Model.banks)
+    {
+        <partial name="\Partial\_CardInstituicao" model="bank" />
+    }
+    <partial name="\Partial\_BtnCadastrarInstituicao" />
+}
+else
+{
+    <partial name="\Partial\_EmpytCard" />
+    <partial name="\Partial\_BtnCadastrarInstituicao" />
+}
+
+<partial name="\Partial\_ModalCadastroInstituicao" model="Model.createBank" />
+
+<script src="~/js/Account/Index.js"></script>

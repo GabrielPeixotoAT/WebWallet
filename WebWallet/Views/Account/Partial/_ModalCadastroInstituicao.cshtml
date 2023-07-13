@@ -1,0 +1,37 @@
+﻿@using WebWallet.Data.DTO.Institutions.Bank;
+
+@model CreateBankDTO
+
+<div class="modal fade" id="createInstitution" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Cadastro de Instituição</h5>
+                <button type="button" class="clear-input-class" data-bs-dismiss="modal" aria-label="Close">
+                    <span class="material-symbols-outlined">
+                        close
+                    </span>
+                </button>
+            </div>
+
+            <form method="post" asp-controller="Account" asp-action="CreateBank">
+                <div class="modal-body">
+                    <label asp-for="Name"></label>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" asp-for="Name">
+                    </div>
+
+                    <label asp-for="Code"></label>
+                    <div class="mb-3">
+                        <input type="text" class="form-control" aria-describedby="basic-addon1" asp-for="Code">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="submit" class="btn btn-primary">Cadastrar</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>

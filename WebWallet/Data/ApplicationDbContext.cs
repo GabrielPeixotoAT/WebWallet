@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using WebWallet.Models.Institutions;
 
 namespace WebWallet.Data
 {
@@ -9,5 +10,7 @@ namespace WebWallet.Data
             : base(options)
         {
         }
+
+        public DbSet<Bank> Banks { get; set; }
     }
 }
