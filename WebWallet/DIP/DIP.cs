@@ -12,6 +12,7 @@ namespace WebWallet.DIP
             services.AddScoped<IIdentityService, IdentityService>();
             
             services.AddTransient<IBankService, BankService>();
+            services.AddTransient<IAccountService, AccountService>();
         }
     }
 }

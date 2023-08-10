@@ -1,4 +1,5 @@
 ﻿@using WebWallet.Data.DTO.Account.Bank;
+@using WebWallet.Data.DTO.Account.Account;
 
 @model ReadBankDTO
 <div class="col-lg-6 p-2">
@@ -15,14 +16,17 @@
             <input class="text-center h4 clear-input-class" asp-for="@Model.Name" onblur="UpdateInstitutionName(this, @Model.BankId)" />
         </div>
         <div class="mt-3">
-            @if (false)
+            @if (Model.Accounts.Count() > 0)
             {
-
+                @foreach (ReadAccountDTO account in Model.Accounts)
+                {
+                    @account.Name
+                }
             }
             else
             {
                 <h4 class="text-center h5">Nenhuma conta cadastrada</h4>
-                <partial name="\Partial\_BtnCadastrarConta" />
+                <partial name="\Partial\_BtnCadastrarConta" model="Model.BankId" />
             }
         </div>
     </div>

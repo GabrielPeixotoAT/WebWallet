@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
+using WebWallet.Data.DTO.Account.Account;
 
 namespace WebWallet.Data.DTO.Account.Bank
 {
@@ -14,5 +15,6 @@ namespace WebWallet.Data.DTO.Account.Bank
         [Required]
         public string UserId { get; set; }
         public IdentityUser User { get; set; }
+        public List<ReadAccountDTO> Accounts { get; set; }
     }
 }

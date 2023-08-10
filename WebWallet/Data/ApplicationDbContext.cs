@@ -12,5 +12,6 @@ namespace WebWallet.Data
         }
 
         public DbSet<Bank> Banks { get; set; }
+        public DbSet<Account> Accounts { get; set; }
     }
 }

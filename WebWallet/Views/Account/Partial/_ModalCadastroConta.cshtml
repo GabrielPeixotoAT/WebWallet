@@ -1,12 +1,12 @@
-﻿@using WebWallet.Data.DTO.Account.Bank;
+﻿@using WebWallet.Data.DTO.Account.Account;
 
-@model CreateBankDTO
+@model CreateAccountDTO
 
 <div class="modal fade" id="createAccount" role="dialog">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">Cadastro de Instituição</h5>
+                <h5 class="modal-title" id="exampleModalLongTitle">Cadastro de Conta</h5>
                 <button type="button" class="clear-input-class" data-bs-dismiss="modal" aria-label="Close">
                     <span class="material-symbols-outlined">
                         close
@@ -15,15 +15,57 @@
             </div>
 
             <form method="post" asp-controller="Account" asp-action="CreateAccount">
+                <input type="hidden" asp-for="BankId" id="cadastro-conta-bankid"/>
                 <div class="modal-body">
-                    <label asp-for="Name"></label>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" aria-describedby="basic-addon1" asp-for="Name">
+                    <div class="row">
+                        <div class="col-6">
+                            <label asp-for="Name"></label>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" aria-describedby="basic-addon1" asp-for="Name">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label asp-for="Number"></label>
+                            <div class="mb-3">
+                                <input class="form-control" aria-describedby="basic-addon1" asp-for="Number">
+                            </div>
+                        </div>
                     </div>
-
-                    <label asp-for="Code"></label>
-                    <div class="mb-3">
-                        <input type="text" class="form-control" aria-describedby="basic-addon1" asp-for="Code">
+                    <div class="row">
+                        <div class="col-6">
+                            <label asp-for="OpeningBalance"></label>
+                            <div class="mb-3">
+                                <input class="form-control" aria-describedby="basic-addon1" asp-for="OpeningBalance">
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <label asp-for="AccountType"></label>
+                            <div class="mb-3">
+                                <select class="form-control" asp-for="AccountType">
+                                    <option selected disabled>Selecione</option>
+                                    <option value="0">Dinheiro</option>
+                                    <option value="1">Conta Corrente</option>
+                                    <option value="2">Conta Poupança</option>
+                                    <option value="3">Conta em Corretora</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-6">
+                            <label for="ColorCode"></label>
+                            <div class="mb-3">
+                                <select class="form-control" asp-for="ColorCode">
+                                    <option selected disabled>Selecione</option>
+                                    <option value="1cc74c" class="noHover" style="background-color: #1cc74c;">Verde</option>
+                                    <option value="c71c1c" class="noHover" style="background-color: #c71c1c;">Vermelho</option>
+                                    <option value="1c1fc7" class="noHover" style="background-color: #1c1fc7;">Azul</option>
+                                    <option value="bbc71c" class="noHover" style="background-color: #bbc71c;">Amarelo</option>
+                                    <option value="1ab2ba" class="noHover" style="background-color: #1ab2ba;">Ciano</option>
+                                    <option value="6418ab" class="noHover" style="background-color: #6418ab;">Roxo</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <div class="modal-footer">

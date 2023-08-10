@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebWallet.Data.DTO.Account.Account;
 using WebWallet.Data.DTO.Account.Bank;
 using WebWallet.Data.ViewModel.Accounts;
 using WebWallet.Services.Account.Interfaces;
@@ -8,10 +9,12 @@ namespace WebWallet.Controllers
     public class AccountController : Controller
     {
         IBankService bankService;
+        IAccountService accountService;
 
-        public AccountController(IBankService bankService)
+        public AccountController(IBankService bankService, IAccountService accountService)
         {
             this.bankService = bankService;
+            this.accountService = accountService;
         }
 
         public async Task<IActionResult> Index() 
@@ -21,6 +24,13 @@ namespace WebWallet.Controllers
             viewModel.banks = await bankService.ReadAllByUserAsync(User);
 
             return View(viewModel);
+        }
+
+        public async Task<IActionResult> CreateAccount(CreateAccountDTO createAccount)
+        {
+            var result = await accountService.CreateWithUserAsync(createAccount, User);
+
+            return Redirect("/Account");
         }
 
         public async Task<IActionResult> CreateBank(CreateBankDTO bank)

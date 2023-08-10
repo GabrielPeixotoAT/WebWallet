@@ -43,3 +43,11 @@ body {
     margin-top: -25px;
     margin-right: -25px;
 }
+
+.noHover {
+    background-color: springgreen;
+}
+
+.noHover:hover{
+    background-color: springgreen;
+}

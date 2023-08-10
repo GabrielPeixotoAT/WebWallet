@@ -44,7 +44,7 @@ namespace WebWallet.Services.Account
 
         public async Task<ReadBankDTO> ReadByIdAsync(int id)
         {
-            Bank? bank = await GetByIdAsync(id);
+            Bank bank = await GetByIdAsync(id);
 
             return mapper.Map<ReadBankDTO>(bank);
         }

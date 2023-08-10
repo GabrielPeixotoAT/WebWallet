@@ -55,4 +55,8 @@ function UpdateInstitutionName(input, id) {
             })
         }
     });
+};
+
+function SetBankId(id) {
+    $('#cadastro-conta-bankid').val(id);
 }

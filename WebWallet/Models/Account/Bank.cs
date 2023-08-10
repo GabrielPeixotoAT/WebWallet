@@ -15,5 +15,6 @@ namespace WebWallet.Models.Account
         [Required]
         public string UserId { get; set; }
         public IdentityUser User { get; set; }
+        public virtual List<Account> Accounts { get; set; }
     }
 }

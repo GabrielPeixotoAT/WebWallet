@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebWallet.Data;
 
@@ -11,9 +12,10 @@ using WebWallet.Data;
 namespace WebWallet.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230713173304_CriaTabelaAccount")]
+    partial class CriaTabelaAccount
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -242,9 +244,6 @@ namespace WebWallet.Data.Migrations
                         .IsRequired()
                         .HasMaxLength(7)
                         .HasColumnType("nvarchar(7)");
-
-                    b.Property<decimal>("CurrentBalance")
-                        .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("Name")
                         .IsRequired()
