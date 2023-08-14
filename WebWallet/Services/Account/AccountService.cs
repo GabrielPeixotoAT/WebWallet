@@ -34,6 +34,7 @@ namespace WebWallet.Services.Account
         {
             if (!await AvaliableToCreateWithUserAsync(createAccount, user))
                 throw new ApplicationException("Error to create account");
+            createAccount.CurrentBalance = createAccount.OpeningBalance;
 
             Models.Account.Account account = mapper.Map<Models.Account.Account>(createAccount);
 

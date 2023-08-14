@@ -38,6 +38,16 @@ body {
     padding: 20px
 }
 
+.my-subcard {
+    border-radius: 15px;
+    padding: 10px
+}
+
+.my-subcard-active {
+    border-radius: 15px;
+    padding: 10px
+}
+
 .my-card-close-btn {
     float: right;
     margin-top: -25px;
@@ -50,4 +60,12 @@ body {
 
 .noHover:hover{
     background-color: springgreen;
+}
+
+/*COLOR CLASSES*/
+
+/*backgounds*/
+
+.bg-lightgray {
+    background-color: lightgray;
 }

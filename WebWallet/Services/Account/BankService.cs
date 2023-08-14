@@ -6,6 +6,7 @@ using WebWallet.Data;
 using WebWallet.Models.Account;
 using WebWallet.Services.Identity.Interfaces;
 using WebWallet.Services.Account.Interfaces;
+using Microsoft.EntityFrameworkCore;
 
 namespace WebWallet.Services.Account
 {
@@ -54,6 +55,15 @@ namespace WebWallet.Services.Account
             IdentityUser user = await identityService.GetCurrentUserAsync(principal);
 
             List<Bank> banks = context.Banks.Where(b => b.User == user).ToList();
+
+            return mapper.Map<List<ReadBankDTO>>(banks);
+        }
+
+        public async Task<IEnumerable<ReadBankDTO>> ReadAllBylUserWithAccountsAsync(ClaimsPrincipal principal)
+        {
+            IdentityUser user = await identityService.GetCurrentUserAsync(principal);
+
+            List<Bank> banks = context.Banks.Include(bank => bank.Accounts).Where(b => b.User == user).ToList();
 
             return mapper.Map<List<ReadBankDTO>>(banks);
         }

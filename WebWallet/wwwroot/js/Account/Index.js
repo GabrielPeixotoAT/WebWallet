@@ -59,4 +59,32 @@ function UpdateInstitutionName(input, id) {
 
 function SetBankId(id) {
     $('#cadastro-conta-bankid').val(id);
-}
+};
+
+function UpdateAccount(ellement, id) {
+    var asd;
+
+    var dados = {
+        Name: input.value,
+        BankId: id
+    };
+
+    $.ajax({
+        type: "POST",
+        url: document.URL + "/UpdateBankName",
+        contentType: "application/json",
+        data: JSON.stringify(dados),
+        success: function (result) {
+            if (result) {
+                input.value = result;
+            }
+        },
+        error: function (errorThrown) {
+            Swal.fire({
+                icon: 'error',
+                title: 'Erro',
+                text: JSON.stringify(errorThrown)
+            })
+        }
+    });
+};

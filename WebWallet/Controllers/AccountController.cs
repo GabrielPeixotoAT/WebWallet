@@ -21,7 +21,7 @@ namespace WebWallet.Controllers
         {
             AccountViewModel viewModel = new AccountViewModel();
 
-            viewModel.banks = await bankService.ReadAllByUserAsync(User);
+            viewModel.banks = await bankService.ReadAllBylUserWithAccountsAsync(User);
 
             return View(viewModel);
         }
